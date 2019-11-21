@@ -53,6 +53,9 @@ public class GameScene extends Scene{
 		if (gm.p.dead) {
 			g.setFont(titleFont);
 			g.drawString("DEAD", 800, 500);
+			g.setFont(smallestTitleFont);
+			g.drawString("[R] to Restart", 840, 630);
+			g.setFont(titleFont);
 			if (gm.p.distanceTraveled > highScore) {
 				highScore = gm.p.distanceTraveled;
 				Misc.writeToFile("Res/score.txt", (int) highScore + "");
@@ -93,7 +96,7 @@ public class GameScene extends Scene{
 		
 		if(keys[82]) Driver.setState(4);
 		gm.p.update(gm, keys);
-		if ((int) gm.p.distanceTraveled % 10 == 0 && !demoMode) {
+		if ((int) gm.p.distanceTraveled % 10 == 0 && !demoMode && !gm.p.dead) {
 			gm.gameSpeed += .01f;
 		}
 		gm.updateChunks();

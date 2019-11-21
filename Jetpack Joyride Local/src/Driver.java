@@ -32,6 +32,7 @@ public class Driver extends JPanel
 	boolean[] mouse = new boolean[200];
 	static boolean[] mouseReleased = new boolean[10];
 	static int state = 0;
+	static boolean darkMode;
 	Point mPos = new Point(0, 0);
 
 	MenuScene m = new MenuScene();
