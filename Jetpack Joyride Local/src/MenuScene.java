@@ -33,8 +33,10 @@ public class MenuScene extends Scene {
 		// g.setColor(new Color((int)(s1.value*255), (int)(s1.value*255),
 		// (int)(s1.value*255)));
 		// g.fillRect(0, 0, 1000, 1000);
+		g.setColor(Driver.darkMode ? Color.white : Color.black);
 		b1.draw(g, 35, 60);
 		b2.draw(g, 35, 60);
+		g.setColor(Driver.darkMode ? Color.white : Color.black);
 		g.setFont(Driver.smallTitleFont);
 		g.drawString("Rise of the Dawn of the Planet of the Triangles II:", 500, 200);
 		g.setFont(Driver.fancyTitleFont);

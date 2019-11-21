@@ -9,7 +9,6 @@ public class Slider {
 	int w;
 	int bw,bh;
 	boolean moving;
-	Font f;
 
 	public Slider(Point pos, int w, Color c, int bw, int bh, double initValue, Font f) {
 		super();

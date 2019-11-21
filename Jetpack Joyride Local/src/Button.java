@@ -38,18 +38,21 @@ class Button {
 
 	public void draw(Graphics g, int xOff, int yOff) {
 		g.setFont(f);
-		g.setColor(c);
+		g.setColor(!Driver.darkMode ? Color.white : Color.black);
 		if (glowing)
 			g.setColor(Color.GRAY);
 		g.fillRoundRect((int) bounds.pos.x, (int) bounds.pos.y, (int) bounds.w, (int) bounds.h, 10, 10);
-		g.setColor(Color.black);
+		g.setColor(Driver.darkMode ? Color.white : Color.black);
 		g.drawRoundRect((int) bounds.pos.x, (int) bounds.pos.y, (int) bounds.w, (int) bounds.h, 10, 10);
 		if (img != null)
 			g.drawImage(img, (int) bounds.pos.x, (int) bounds.pos.y,
 					(int) (bounds.w < bounds.h ? bounds.w : (int) bounds.h),
 					bounds.w < bounds.h ? (int) bounds.w : (int) bounds.h, null);
-		if (text != null)
+		if (text != null) {
+g.setColor(Driver.darkMode ? Color.white : Color.black);
 			g.drawString(text, (int) (bounds.pos.x + xOff), (int) (bounds.pos.y + yOff));
+			
+		}
 	}
 
 }

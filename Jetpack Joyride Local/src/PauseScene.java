@@ -11,7 +11,7 @@ public class PauseScene extends Scene{
 		Graphics2D g2 = (Graphics2D)g;
 		g2.setPaint(new Color(0,0,0,100));
 		g2.fillRect(0, 0, 1800, 1000);
-		g.setColor(Color.black);
+		g.setColor(Driver.darkMode ? Color.white : Color.black);
 		g.setFont(Driver.titleFont);
 		g.drawString("Paused", 800, 60);
 		g.setFont(Driver.smallestTitleFont);

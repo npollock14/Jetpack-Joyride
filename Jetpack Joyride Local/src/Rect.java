@@ -46,7 +46,6 @@ public class Rect {
 	}
 
 	public void draw(Graphics g) {
-		g.setColor(Color.black);
 		g.drawRect((int) pos.x, (int) pos.y, (int) w, (int) h);
 	}
 

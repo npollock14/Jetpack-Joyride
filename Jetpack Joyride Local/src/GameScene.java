@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.util.ArrayList;
@@ -26,17 +27,23 @@ public class GameScene extends Scene{
 	
 	@Override
 	public void draw(Graphics g) {
+		
+		if(Driver.darkMode) {
+			g.setColor(new Color(30,30,30));
+			g.fillRect(0, 0, screenWidth, screenHeight);
+		}
+		g.setColor(Driver.darkMode ? Color.white : Color.black);
 		gm.draw(g);
-
 		
 		if(!demoMode) {
+			g.setColor(Driver.darkMode ? Color.white : Color.black);
 			g.drawLine(50, 0, 50, screenHeight);
 			g.drawLine(49, 0, 49, screenHeight);
 			g.drawLine(48, 0, 48, screenHeight);
 			gm.p.draw(g);
 		}
 		
-
+g.setColor(Driver.darkMode ? Color.white : Color.black);
 		g.setFont(fpsFont);
 		fps.add(1 / ((System.currentTimeMillis() - frameStart) / 1000));
 		if(fps.size() >= 60) {
@@ -51,6 +58,7 @@ public class GameScene extends Scene{
 		frameStart = System.currentTimeMillis();
 
 		if (gm.p.dead) {
+			g.setColor(Driver.darkMode ? Color.white : Color.black);
 			g.setFont(titleFont);
 			g.drawString("DEAD", 800, 500);
 			g.setFont(smallestTitleFont);
@@ -71,6 +79,7 @@ public class GameScene extends Scene{
 
 		}
 		if (!gm.p.dead && !demoMode) {
+			g.setColor(Driver.darkMode ? Color.white : Color.black);
 			g.setFont(titleFont);
 			g.drawString((int) gm.p.distanceTraveled + "m", 60, 900);
 			g.setFont(smallTitleFont);
