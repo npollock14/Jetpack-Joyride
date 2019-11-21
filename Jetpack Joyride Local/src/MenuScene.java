@@ -28,29 +28,29 @@ public class MenuScene extends Scene {
 
 	@Override
 	public void draw(Graphics g) {
-		g.setFont(f);
+		
 		backgroundScene.draw(g);
 		// g.setColor(new Color((int)(s1.value*255), (int)(s1.value*255),
 		// (int)(s1.value*255)));
 		// g.fillRect(0, 0, 1000, 1000);
-		b1.draw(g, 20, 75);
-		b2.draw(g, 20, 75);
-
-		g.drawString("Rise of the Dawn of the Planet of the Triangles II:", 200, 200);
-		g.drawString("Revenge of Super Rectangle Man", 200, 250);
+		b1.draw(g, 35, 60);
+		b2.draw(g, 35, 60);
+		g.setFont(Driver.smallTitleFont);
+		g.drawString("Rise of the Dawn of the Planet of the Triangles II:", 500, 200);
+		g.setFont(Driver.fancyTitleFont);
+		g.drawString("Revenge of Super Rectangle Man", 300, 280);
 
 	}
 
 	@Override
-	public void init(Point mPos, boolean[] keys, boolean[] keysToggled, Font f) {
+	public void init(Point mPos, boolean[] keys, boolean[] keysToggled) {
 		this.id = 0;
 		this.mPos = mPos;
 		this.keys = keys;
 		this.keysToggled = keysToggled;
-		this.f = f;
-		b1 = new Button(new Rect(470, 500, 260, 100), null, 0, "Start", f, Color.white, true);
-		b2 = new Button(new Rect(400, 640, 410, 100), null, 0, "Settings", f, Color.white, true);
-		backgroundScene.init(mPos, keys, keysToggled, f);
+		b1 = new Button(new Rect(750, 400, 200, 80), null, 0, "Start", Driver.titleFont, Color.white, true);
+		b2 = new Button(new Rect(700, 500, 290, 80), null, 0, "Settings", Driver.titleFont, Color.white, true);
+		backgroundScene.init(mPos, keys, keysToggled);
 		backgroundScene.gm.p.invincible = true;
 		backgroundScene.demoMode = true;
 

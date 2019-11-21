@@ -39,6 +39,13 @@ public class Driver extends JPanel
 	PauseScene pause = new PauseScene();
 	SettingsScene settings = new SettingsScene();
 	static Font f = new Font("Press Start", 0, 48);
+	static Font fBig = new Font("Press Start", 0, 82);
+	static Font font = new Font("Courier New", 1, 25);
+	static Font titleFont = new Font("Dialog", 3, 50);
+	static Font smallTitleFont = new Font("Dialog", 3, 30);
+	static Font smallestTitleFont = new Font("Dialog", 1, 17);
+	static Font fpsFont = new Font("Impact", 1, 25);
+	static Font fancyTitleFont = new Font("TimesRoman", 3, 82);
 
 	// ============== end of settings ==================
 
@@ -78,7 +85,7 @@ public class Driver extends JPanel
 			pause.update(mPos, keys, keysToggled, mouse, mouseReleased);
 		}
 		if(state == 4) {
-			game.init(mPos, keys, keysToggled, f);
+			game.init(mPos, keys, keysToggled);
 			state = 1;
 		}
 
@@ -115,10 +122,10 @@ public class Driver extends JPanel
 
 	private void init() {
 
-		game.init(mPos, keys, keysToggled, f);
-		m.init(mPos, keys, keysToggled, f);
-		pause.init(mPos, keys, keysToggled, f);
-		settings.init(mPos, keys, keysToggled, f);
+		game.init(mPos, keys, keysToggled);
+		m.init(mPos, keys, keysToggled);
+		pause.init(mPos, keys, keysToggled);
+		settings.init(mPos, keys, keysToggled);
 
 	}
 

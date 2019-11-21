@@ -1,6 +1,6 @@
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 public class PauseScene extends Scene{
 	
@@ -8,11 +8,16 @@ public class PauseScene extends Scene{
 
 	@Override
 	public void draw(Graphics g) {
-		
-		g.setFont(f);
-		g.drawString("Paused", 1000, 450);
-		menu.draw(g, 20, 75);
-		restart.draw(g, 20, 75);
+		Graphics2D g2 = (Graphics2D)g;
+		g2.setPaint(new Color(0,0,0,100));
+		g2.fillRect(0, 0, 1800, 1000);
+		g.setColor(Color.black);
+		g.setFont(Driver.titleFont);
+		g.drawString("Paused", 800, 60);
+		g.setFont(Driver.smallestTitleFont);
+		g.drawString("[ESC] to Resume", 1000, 50);
+		menu.draw(g, 10, 35);
+		restart.draw(g, 20, 35);
 
 		
 	}
@@ -48,14 +53,13 @@ public class PauseScene extends Scene{
 	}
 
 	@Override
-	public void init(Point mPos, boolean[] keys, boolean[] keysToggled, Font f) {
+	public void init(Point mPos, boolean[] keys, boolean[] keysToggled) {
 		this.id = 0;
 		this.mPos = mPos;
 		this.keys = keys;
 		this.keysToggled = keysToggled;
-		this.f = f;
-		menu = new Button(new Rect(470, 500, 260, 100), null, 0, "Menu", f, Color.white, true);
-		restart = new Button(new Rect(400, 640, 410, 100), null, 0, "Restart", f, Color.white, true);
+		menu = new Button(new Rect(760, 90, 100, 50), null, 0, "Menu", Driver.smallTitleFont, Color.white, true);
+		restart = new Button(new Rect(900, 90, 150, 50), null, 0, "Restart", Driver.smallTitleFont, Color.white, true);
 		
 	}
 

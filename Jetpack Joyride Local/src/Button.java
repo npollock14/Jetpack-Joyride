@@ -29,21 +29,27 @@ class Button {
 		} else {
 			clicked = false;
 		}
-		if(mPos.inside(bounds) && glow) {
+		if (mPos.inside(bounds) && glow) {
 			glowing = true;
-		}else {
+		} else {
 			glowing = false;
 		}
 	}
 
 	public void draw(Graphics g, int xOff, int yOff) {
+		g.setFont(f);
 		g.setColor(c);
-		if(glowing) g.setColor(Color.GRAY);
-		g.fillRoundRect((int)bounds.pos.x, (int)bounds.pos.y, (int)bounds.w, (int)bounds.h, 10, 10);
+		if (glowing)
+			g.setColor(Color.GRAY);
+		g.fillRoundRect((int) bounds.pos.x, (int) bounds.pos.y, (int) bounds.w, (int) bounds.h, 10, 10);
 		g.setColor(Color.black);
-		g.drawRoundRect((int)bounds.pos.x, (int)bounds.pos.y, (int)bounds.w, (int)bounds.h, 10, 10);
-		if(img!=null) g.drawImage(img, (int)bounds.pos.x, (int)bounds.pos.y, (int) (bounds.w < bounds.h ? bounds.w : (int)bounds.h), bounds.w < bounds.h ? (int)bounds.w : (int)bounds.h, null);
-		if(text!=null)g.drawString(text, (int)(bounds.pos.x + xOff), (int) (bounds.pos.y + yOff));
+		g.drawRoundRect((int) bounds.pos.x, (int) bounds.pos.y, (int) bounds.w, (int) bounds.h, 10, 10);
+		if (img != null)
+			g.drawImage(img, (int) bounds.pos.x, (int) bounds.pos.y,
+					(int) (bounds.w < bounds.h ? bounds.w : (int) bounds.h),
+					bounds.w < bounds.h ? (int) bounds.w : (int) bounds.h, null);
+		if (text != null)
+			g.drawString(text, (int) (bounds.pos.x + xOff), (int) (bounds.pos.y + yOff));
 	}
 
 }

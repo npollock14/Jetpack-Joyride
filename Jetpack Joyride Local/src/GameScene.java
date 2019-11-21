@@ -101,7 +101,7 @@ public class GameScene extends Scene{
 	}
 
 	@Override
-	public void init(Point mPos, boolean[] keys, boolean[] keysToggled, Font f) {
+	public void init(Point mPos, boolean[] keys, boolean[] keysToggled) {
 		gm = new GameManager(3.0f, new Player(new Point(500, 100), 50, 100, new Vec2(0, 0)), 1.0f, screenWidth,
 				screenHeight);
 

@@ -7,11 +7,10 @@ public abstract class Scene {
 	boolean[] keysToggled = new boolean[300];
 	boolean[] mouse = new boolean[200];
 	boolean[] mouseReleased = new boolean[10];
-	Font f;
 	int id;
 	boolean running;
 	
 	public abstract void draw(Graphics g);
 	public abstract void update(Point mPos, boolean[] keys, boolean[] keysToggled, boolean[] mouse, boolean[] mouseReleased);
-	public abstract void init(Point mPos, boolean[] keys, boolean[] keysToggled, Font f);
+	public abstract void init(Point mPos, boolean[] keys, boolean[] keysToggled);
 }

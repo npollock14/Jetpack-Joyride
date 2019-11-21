@@ -13,7 +13,7 @@ public class SettingsScene extends Scene{
 		g.fillRect(0, 0, 1800, 1000);
 		g.setColor(Color.BLACK);
 		s.draw(g);
-		menu.draw(g, 20, 75);
+		menu.draw(g, 35, 60);
 		
 	}
 
@@ -29,9 +29,9 @@ public class SettingsScene extends Scene{
 	}
 
 	@Override
-	public void init(Point mPos, boolean[] keys, boolean[] keysToggled, Font f) {
-		s = new Slider(new Point(1000,500), 200, Color.gray, 30,30,.5,f);
-		menu = new Button(new Rect(20, 20, 260, 100), null, 0, "Back", f, Color.white, true);
+	public void init(Point mPos, boolean[] keys, boolean[] keysToggled) {
+		s = new Slider(new Point(200,500), 1400, Color.WHITE, 100,200,.5,Driver.f);
+		menu = new Button(new Rect(20, 20, 200, 80), null, 0, "Back", Driver.titleFont, Color.white, true);
 		
 	}
 
