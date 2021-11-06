@@ -161,9 +161,9 @@ public class Driver extends JPanel
 	public Driver() {
 
 		init();
-
+		String title = "Rise of the Dawn of the Planet of the Triangles II: Revenge of Super Rectangle Man";
 		JFrame f = new JFrame();
-		f.setTitle("Rise of the Dawn of the Planet of the Triangles II: Revenge of Super Rectangle Man");
+		f.setTitle(title);
 		f.setSize(screenWidth, screenHeight);
 		f.setBackground(Color.BLACK);
 		f.setResizable(false);
